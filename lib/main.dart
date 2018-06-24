@@ -58,7 +58,6 @@ class MyApp extends StatelessWidget {
       );
     }
 
-
     Widget buttonSection = new Container(
       child: new Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -91,9 +90,6 @@ class MyApp extends StatelessWidget {
       ),
     );
   }
-
-
-
 }
 
 class MyHomePage extends StatefulWidget {
