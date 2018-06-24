@@ -1,25 +1,54 @@
 import 'package:flutter/material.dart';
-
-void main() => runApp(new MyApp());
+import 'package:flutter/rendering.dart' show debugPaintSizeEnabled;
+void main() {
+  debugPaintSizeEnabled = true;
+  runApp(new MyApp());
+}
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return new MaterialApp(
-      title: 'Flutter Demo',
-      theme: new ThemeData(
-        // This is the theme of your application.
-        //
-        // Try running your application with "flutter run". You'll see the
-        // application has a blue toolbar. Then, without quitting the app, try
-        // changing the primarySwatch below to Colors.green and then invoke
-        // "hot reload" (press "r" in the console where you ran "flutter run",
-        // or press Run > Flutter Hot Reload in IntelliJ). Notice that the
-        // counter didn't reset back to zero; the application is not restarted.
-        primarySwatch: Colors.blue,
+
+    Widget titleSection = new Container(
+      padding: const EdgeInsets.all(32.0),
+      child: new Row(
+        children: <Widget>[
+          new Expanded(
+              child: new Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  new Text('Oeschinen Lake Campground'),
+                  new Text('Kandersteg, Switzerland')
+
+                ],
+              )
+          ),
+          new Icon(
+            Icons.star,
+            color: Colors.grey,
+          )
+        ],
       ),
-      home: new MyHomePage(title: 'Flutter Demo Home Page'),
+    );
+    return MaterialApp(
+      title: 'Flutter Demo',
+      home: new Scaffold(
+        appBar: new AppBar(
+          title: new Text('Top Lakes'),
+        ),
+      body: new ListView(
+        children: <Widget>[
+          new Image.asset(
+            'images/lake.jpg',
+            width: 600.0,
+            height: 240.0,
+            fit: BoxFit.cover,
+          ),
+          titleSection,
+        ],
+      ),
+      ),
     );
   }
 }
