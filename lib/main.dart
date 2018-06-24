@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart' show debugPaintSizeEnabled;
+
 void main() {
   debugPaintSizeEnabled = true;
   runApp(new MyApp());
@@ -9,28 +10,24 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-
     Widget titleSection = new Container(
       padding: const EdgeInsets.all(32.0),
       child: new Row(
         children: <Widget>[
           new Expanded(
               child: new Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: <Widget>[
-                  new Container(
-                    padding: const EdgeInsets.only(bottom: 8.0),
-                    child: new Text(
-                      'Oeschinen Lake Campground',
-                      style: new TextStyle(
-                        fontWeight: FontWeight.bold
-                      ),
-                    ),
-                  ),
-                  new Text('Kandersteg, Switzerland')
-                ],
-              )
-          ),
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
+              new Container(
+                padding: const EdgeInsets.only(bottom: 8.0),
+                child: new Text(
+                  'Oeschinen Lake Campground',
+                  style: new TextStyle(fontWeight: FontWeight.bold),
+                ),
+              ),
+              new Text('Kandersteg, Switzerland')
+            ],
+          )),
           new Icon(
             Icons.star,
             color: Colors.grey,
@@ -45,17 +42,17 @@ class MyApp extends StatelessWidget {
         appBar: new AppBar(
           title: new Text('Top Lakes'),
         ),
-      body: new ListView(
-        children: <Widget>[
-          new Image.asset(
-            'images/lake.jpg',
-            width: 600.0,
-            height: 240.0,
-            fit: BoxFit.cover,
-          ),
-          titleSection,
-        ],
-      ),
+        body: new ListView(
+          children: <Widget>[
+            new Image.asset(
+              'images/lake.jpg',
+              width: 600.0,
+              height: 240.0,
+              fit: BoxFit.cover,
+            ),
+            titleSection,
+          ],
+        ),
       ),
     );
   }
