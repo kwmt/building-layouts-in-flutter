@@ -37,13 +37,35 @@ class MyApp extends StatelessWidget {
       ),
     );
 
+    Column _buildButtonColumn(IconData icon, String label) {
+      Color color = Theme.of(context).primaryColor;
+      return new Column(
+        mainAxisSize: MainAxisSize.min,
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          new Icon(icon, color: color),
+          new Container(
+            margin: const EdgeInsets.only(top: 8.0),
+            child: new Text(
+              label,
+              style: new TextStyle(
+                fontSize: 12.0,
+                color: color,
+              ),
+            ),
+          )
+        ],
+      );
+    }
+
+
     Widget buttonSection = new Container(
       child: new Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: <Widget>[
-          new Icon(Icons.call, color: Colors.blue),
-          new Icon(Icons.near_me, color: Colors.blue),
-          new Icon(Icons.share, color: Colors.blue),
+          _buildButtonColumn(Icons.call, 'CALL'),
+          _buildButtonColumn(Icons.near_me, 'ROUTE'),
+          _buildButtonColumn(Icons.share, 'SHARE'),
         ],
       ),
     );
@@ -69,6 +91,7 @@ class MyApp extends StatelessWidget {
       ),
     );
   }
+
 
 
 }
