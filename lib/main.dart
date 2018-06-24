@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart' show debugPaintSizeEnabled;
 
 void main() {
-  debugPaintSizeEnabled = true;
+  debugPaintSizeEnabled = false;
   runApp(new MyApp());
 }
 
@@ -36,6 +36,18 @@ class MyApp extends StatelessWidget {
         ],
       ),
     );
+
+    Widget buttonSection = new Container(
+      child: new Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: <Widget>[
+          new Icon(Icons.call, color: Colors.blue),
+          new Icon(Icons.near_me, color: Colors.blue),
+          new Icon(Icons.share, color: Colors.blue),
+        ],
+      ),
+    );
+
     return MaterialApp(
       title: 'Flutter Demo',
       home: new Scaffold(
@@ -51,11 +63,14 @@ class MyApp extends StatelessWidget {
               fit: BoxFit.cover,
             ),
             titleSection,
+            buttonSection,
           ],
         ),
       ),
     );
   }
+
+
 }
 
 class MyHomePage extends StatefulWidget {
