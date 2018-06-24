@@ -16,18 +16,18 @@ class MyApp extends StatelessWidget {
         children: <Widget>[
           new Expanded(
               child: new Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: <Widget>[
-              new Container(
-                padding: const EdgeInsets.only(bottom: 8.0),
-                child: new Text(
-                  'Oeschinen Lake Campground',
-                  style: new TextStyle(fontWeight: FontWeight.bold),
-                ),
-              ),
-              new Text('Kandersteg, Switzerland')
-            ],
-          )),
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  new Container(
+                    padding: const EdgeInsets.only(bottom: 8.0),
+                    child: new Text(
+                      'Oeschinen Lake Campground',
+                      style: new TextStyle(fontWeight: FontWeight.bold),
+                    ),
+                  ),
+                  new Text('Kandersteg, Switzerland')
+                ],
+              )),
           new Icon(
             Icons.star,
             color: Colors.grey,
@@ -38,7 +38,9 @@ class MyApp extends StatelessWidget {
     );
 
     Column _buildButtonColumn(IconData icon, String label) {
-      Color color = Theme.of(context).primaryColor;
+      Color color = Theme
+          .of(context)
+          .primaryColor;
       return new Column(
         mainAxisSize: MainAxisSize.min,
         mainAxisAlignment: MainAxisAlignment.center,
@@ -69,6 +71,17 @@ class MyApp extends StatelessWidget {
       ),
     );
 
+    Widget textSection = new Container(
+      padding: const EdgeInsets.all(32.0),
+      child: new Text(
+          '''
+Lake Oeschinen lies at the foot of the Blüemlisalp in the Bernese Alps. Situated 1,578 meters above sea level, it is one of the larger Alpine Lakes. A gondola ride from Kandersteg, followed by a half-hour walk through pastures and pine forest, leads you to the lake, which warms to 20 degrees Celsius in the summer. Activities enjoyed here include rowing, and riding the summer toboggan run.
+        ''',
+        softWrap: false,
+        overflow: TextOverflow.ellipsis,
+      ),
+    );
+
     return MaterialApp(
       title: 'Flutter Demo',
       home: new Scaffold(
@@ -85,6 +98,7 @@ class MyApp extends StatelessWidget {
             ),
             titleSection,
             buttonSection,
+            textSection,
           ],
         ),
       ),
@@ -162,7 +176,10 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             new Text(
               '$_counter',
-              style: Theme.of(context).textTheme.display1,
+              style: Theme
+                  .of(context)
+                  .textTheme
+                  .display1,
             ),
           ],
         ),
