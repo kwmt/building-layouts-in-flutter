@@ -20,7 +20,12 @@ class MyApp extends StatelessWidget {
                 children: <Widget>[
                   new Container(
                     padding: const EdgeInsets.only(bottom: 8.0),
-                    child: new Text('Oeschinen Lake Campground'),
+                    child: new Text(
+                      'Oeschinen Lake Campground',
+                      style: new TextStyle(
+                        fontWeight: FontWeight.bold
+                      ),
+                    ),
                   ),
                   new Text('Kandersteg, Switzerland')
                 ],
