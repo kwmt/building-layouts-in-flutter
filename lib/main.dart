@@ -18,9 +18,11 @@ class MyApp extends StatelessWidget {
               child: new Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
-                  new Text('Oeschinen Lake Campground'),
+                  new Container(
+                    padding: const EdgeInsets.only(bottom: 8.0),
+                    child: new Text('Oeschinen Lake Campground'),
+                  ),
                   new Text('Kandersteg, Switzerland')
-
                 ],
               )
           ),
